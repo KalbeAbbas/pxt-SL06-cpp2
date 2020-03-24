@@ -1194,10 +1194,11 @@ namespace SL06 {
     }
 	
 	//% block="test_block"
+	//% blockId="testBlock"
 	//% shim=sl06::readBytes
 	export function bYtes(): number
 	{
-		return 0;
+		return 1;
 	}
 
     begin();
