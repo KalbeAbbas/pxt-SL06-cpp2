@@ -50,10 +50,11 @@ namespace sl06
 	static SL06* xSL06 = new SL06(APDS9960_ADDRESS);
 	
 	uint8_t test_data = 5;
+	uint8_t test_buffer[] = {1,2,3,4,5};
 	
 	//%
-	uint8_t readBytes(uint8_t reg, int len)
+	uint8_t* readBytes(uint8_t reg, int len)
 	{
-		return (xSL06->retNumber());
+		return (test_buffer);
 	}
 }
