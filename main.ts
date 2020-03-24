@@ -1193,10 +1193,10 @@ namespace SL06 {
 		return [];
     }
 	
-	//% block="test_block"
+	//% block="test_block %reg and %len"
 	//% blockId="testBlock"
 	//% shim=sl06::readBytes
-	export function bYtes(): number
+	export function bYtes(reg: NumberFormat.UInt8BE,len: number): number
 	{
 		return 1;
 	}
