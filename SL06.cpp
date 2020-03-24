@@ -39,9 +39,10 @@ uint8_t* SL06::readBlockData(uint8_t reg, uint8_t len, uint8_t* buf)
 	return data;
 }
 
-uint8_t SL06::retNumber()
+uint8_t* SL06::retNumber()
 {
-	return 5;
+	uint8_t list_number[] = {1,2,3,4,5};
+	return list_number;
 }
 
 
@@ -55,6 +56,6 @@ namespace sl06
 	//%
 	uint8_t* readBytes(uint8_t reg, int len)
 	{
-		return (test_buffer);
+		return (xSL06->retNumber());
 	}
 }
