@@ -1189,11 +1189,16 @@ namespace SL06 {
         return val
     }
 
-	//% block="test_block"
-	//% shim=sl06::readBytes
-    export function wireReadDataBlock(reg: NumberFormat.UInt8BE, len: number): number[] {
+    function wireReadDataBlock(reg: NumberFormat.UInt8BE, len: number): number[] {
 		return [];
     }
+	
+	//% block="test_block"
+	//% shim=sl06::readBytes
+	export function bYtes(): number
+	{
+		return 0;
+	}
 
     begin();
 }
