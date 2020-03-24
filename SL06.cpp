@@ -3,7 +3,7 @@
 
 using namespace pxt;
 
-uint8_t SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
+int SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
 #ifdef CODAL_I2C
     auto sda = LOOKUP_PIN(SDA);
     auto scl = LOOKUP_PIN(SCL);
@@ -48,14 +48,11 @@ uint8_t* SL06::retNumber()
 
 namespace sl06
 {
-	static SL06* xSL06 = new SL06(APDS9960_ADDRESS);
-	
-	uint8_t test_data = 5;
-	uint8_t test_buffer[] = {1,2,3,4,5};
+	static SL06* xSL06 = new SL06(APDS9960_ADDRESS << 1);
 	
 	//%
-	uint8_t* readBytes(uint8_t reg, int len)
+	int readBytes(uint8_t reg, int len)
 	{
-		return (xSL06->retNumber());
+		return (xSL06->i2cread(reg, xSL06->data, len));
 	}
 }

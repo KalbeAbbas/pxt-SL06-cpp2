@@ -9,9 +9,9 @@
 class SL06
 {
 	public:
-		SL06(uint8_t addr = APDS9960_ADDRESS << 1);
+		SL06(uint8_t addr);
 		uint8_t* readBlockData(uint8_t reg, uint8_t length, uint8_t* buf);
-		uint8_t i2cread(uint8_t reg, uint8_t *data, int len);
+		int i2cread(uint8_t reg, uint8_t *data, int len);
 		uint8_t* retNumber();
 		uint8_t* data;
 		
