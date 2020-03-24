@@ -1196,9 +1196,9 @@ namespace SL06 {
 	//% block="test_block %reg and %len"
 	//% blockId="testBlock"
 	//% shim=sl06::readBytes
-	export function bYtes(reg: NumberFormat.UInt8BE,len: number): number
+	export function bYtes(reg: NumberFormat.UInt8BE,len: number): number[]
 	{
-		return 1;
+		return [];
 	}
 
     begin();
