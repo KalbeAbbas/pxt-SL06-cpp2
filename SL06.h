@@ -1,4 +1,6 @@
 
+#define APDS9960_ADDRESS 0x39
+
 #pragma once
 #ifdef CODAL_I2C
 #include "I2C.h"
@@ -7,12 +9,6 @@
 #include "inttypes.h"
 #include "pxt.h"
 
-#ifndef SL06_h
-#define SL06_h
-
-
-
-#define APDS9960_ADDRESS 0x39
 
 class SL06
 {
@@ -28,5 +24,3 @@ class SL06
 		uint8_t i2cAddr;
 		uint8_t ID;
 };
-
-#endif
