@@ -34,7 +34,10 @@ SL06::SL06(uint8_t addr)
 
 uint8_t* SL06::readBlockData(uint8_t reg, uint8_t len, uint8_t* buf)
 {
-	i2cread(reg, data, len);
+	for(int i = 0; i < len; i++)
+	{
+		i2cread(reg, data, 1);
+	}
 	return data;
 }
 
