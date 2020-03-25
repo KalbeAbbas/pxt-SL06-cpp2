@@ -22,9 +22,11 @@ class SL06
 		int i2cread(uint8_t reg, uint8_t *data, int len);
 		uint8_t* retNumber();
 		uint8_t* data;
+		uint8_t readId();
 		
 	private:
-		uint16_t i2cAddr;
+		uint8_t i2cAddr;
+		uint8_t ID;
 };
 
 #endif

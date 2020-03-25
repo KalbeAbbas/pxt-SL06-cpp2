@@ -1200,6 +1200,13 @@ namespace SL06 {
 		return [];
     }
 	
+	//% block="read ID"
+	//% blockId="readID"
+	//% shim=sl06::getID
+    export function readId(): number {
+		return 1;
+    }
+	
 	function bYtes(reg: NumberFormat.UInt8BE,len: number): number[]
 	{
 		return [];

@@ -47,6 +47,13 @@ uint8_t* SL06::retNumber()
 	return list_number;
 }
 
+uint8_t SL06::readId()
+{
+   i2cread(0x39 ,&ID, 1);
+   
+   return ID;
+}
+
 
 namespace sl06
 {
@@ -56,5 +63,11 @@ namespace sl06
 	int readBytes(uint8_t reg, int len)
 	{
 		return (xSL06->i2cread(reg, xSL06->data, len));
+	}
+	
+	//%
+	uint8_t getID()
+	{
+		return (xSL06->readId());
 	}
 }
