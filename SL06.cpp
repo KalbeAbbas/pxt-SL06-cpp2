@@ -49,10 +49,9 @@ uint8_t* SL06::retNumber()
 
 uint8_t SL06::readId()
 {
-   uint8_t id[1];
-   i2cread(0x92 , id, 1);
+   i2cread(0x92 , &ID, 1);
    
-   return id[0];
+   return ID;
 }
 
 
