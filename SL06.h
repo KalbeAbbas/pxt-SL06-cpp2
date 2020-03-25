@@ -1,7 +1,15 @@
+
+#pragma once
+#ifdef CODAL_I2C
+#include "I2C.h"
+#include "Pin.h"
+#endif
+#include "inttypes.h"
+#include "pxt.h"
+
 #ifndef SL06_h
 #define SL06_h
 
-#include "inttypes.h"
 
 
 #define APDS9960_ADDRESS 0x39

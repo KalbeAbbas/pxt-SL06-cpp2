@@ -1,5 +1,4 @@
 #include "SL06.h"
-#include "pxt.h"
 
 using namespace pxt;
 
