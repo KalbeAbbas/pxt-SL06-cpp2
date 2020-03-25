@@ -29,7 +29,7 @@ int SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
 
 SL06::SL06(uint8_t addr)
 {
-	i2cAddr = (addr >> 1) << 1;
+	i2cAddr = addr ;
 }
 
 uint8_t* SL06::readBlockData(uint8_t reg, uint8_t len, uint8_t* buf)
