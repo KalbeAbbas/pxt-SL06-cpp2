@@ -11,7 +11,7 @@ int SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
     int i2c_error_status = 0;
 
 #ifdef CODAL_I2C
-    i2c_error_status = i2->write((uint16_t)i2cAddr, (uint8_t *)&reg, 1, true);
+    i2c_error_status = i2c->write((uint16_t)i2cAddr, (uint8_t *)&reg, 1, true);
 #else
     i2c_error_status = uBit.i2c.write(i2cAddr, (const char *)&reg, 1, true);
 #endif
