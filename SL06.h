@@ -24,7 +24,7 @@ class SL06
 		uint8_t* data;
 		
 	private:
-		uint8_t i2cAddr;
+		uint16_t i2cAddr;
 };
 
 #endif

@@ -29,7 +29,7 @@ int SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
 
 SL06::SL06(uint8_t addr)
 {
-	i2cAddr = addr;
+	i2cAddr = (addr >> 1) << 1;
 }
 
 uint8_t* SL06::readBlockData(uint8_t reg, uint8_t len, uint8_t* buf)
@@ -47,7 +47,7 @@ uint8_t* SL06::retNumber()
 
 namespace sl06
 {
-	static SL06* xSL06 = new SL06(APDS9960_ADDRESS << 1);
+	static SL06* xSL06 = new SL06(APDS9960_ADDRESS);
 	
 	//%
 	int readBytes(uint8_t reg, int len)
