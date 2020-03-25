@@ -17,7 +17,7 @@ int SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
 #endif
 
 #ifdef CODAL_I2C
-    return i2c_error_status = i2c->read((uint16_t)i2cAddr, (uint8_t *)&data, len, false);
+    return i2c_error_status = i2c->read((uint16_t)i2cAddr, (uint8_t *)data, len, false);
 #else
     return i2c_error_status = uBit.i2c.read(i2cAddr, (char *)data, len, false);
 #endif
