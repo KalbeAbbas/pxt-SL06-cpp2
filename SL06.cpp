@@ -7,7 +7,7 @@ int SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
     auto sda = LOOKUP_PIN(SDA);
     auto scl = LOOKUP_PIN(SCL);
     codal::I2C *i2c = pxt::getI2C(sda, scl);
-	uint8_t data3[];
+	uint8_t data3[300];
 #endif
     int i2c_error_status = 0;
 
