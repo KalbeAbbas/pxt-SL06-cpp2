@@ -7,7 +7,7 @@ int SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
     auto sda = LOOKUP_PIN(SDA);
     auto scl = LOOKUP_PIN(SCL);
     codal::I2C *i2c = pxt::getI2C(sda, scl);
-	uint8_t* data3;
+	uint8_t data3[];
 #endif
     int i2c_error_status = 0;
 
@@ -18,7 +18,7 @@ int SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
 #endif
 
 #ifdef CODAL_I2C
-    return i2c_error_status = i2c->read((uint16_t)i2cAddr, data3, len, false);
+    return i2c_error_status = i2c->read((uint16_t)i2cAddr, &data3, len, true);
 #else
     return i2c_error_status = uBit.i2c.read(i2cAddr, (char *)data, len, false);
 #endif
