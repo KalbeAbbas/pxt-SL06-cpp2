@@ -17,7 +17,7 @@ int SL06::i2cread(uint8_t reg, uint8_t *data, int len) {
 #endif
 
 #ifdef CODAL_I2C
-    return i2c_error_status = i2c->read((uint16_t)i2cAddr, data, len, false);
+    return i2c_error_status = i2c->read((uint16_t)i2cAddr, data2, len, false);
 #else
     return i2c_error_status = uBit.i2c.read(i2cAddr, (char *)data, len, false);
 #endif
@@ -55,11 +55,12 @@ uint8_t SL06::readId()
 namespace sl06
 {
 	static SL06* xSL06 = new SL06(APDS9960_ADDRESS);
+	uint8_t* data2;
 	
 	//%
 	int readBytes(uint8_t reg, int len)
 	{
-		return (xSL06->i2cread(reg, &(xSL06->data), len));
+		return (xSL06->i2cread(reg, data2, len));
 	}
 	
 	//%
