@@ -23,4 +23,5 @@ class SL06
 	private:
 		uint8_t i2cAddr;
 		uint8_t ID;
+		char uBit_data[300];
 };
