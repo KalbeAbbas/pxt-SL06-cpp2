@@ -61,10 +61,7 @@ namespace sl06
 	//%
 	int readBytes(uint8_t reg, int len)
 	{
-		for(int i = 0;i < len; i++)
-		{
-			xSL06->i2cread(reg,data2, 1);
-		}
+		//xSL06->i2cread(reg,data2, len);
 		return (1);
 	}
 	
